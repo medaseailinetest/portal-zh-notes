@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 发现你的下一款好游戏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f4f6;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e1e2a;
+      line-height: 1.6;
+      padding: 1.5rem 1rem;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Hero 区 */
+    .hero {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 3.5rem 2.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e7e9ec;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #14141f;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 span {
+      color: #2667ff;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 1.8rem auto;
+      color: #3d3d4e;
+    }
+
+    .hero a {
+      display: inline-block;
+      background: #1e2b3a;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.8rem 2.6rem;
+      border-radius: 60px;
+      font-weight: 500;
+      font-size: 1.05rem;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .hero a:hover {
+      background: #0f1a28;
+      transform: translateY(-2px);
+    }
+
+    /* 卡片分区 */
+    .section {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e8eaed;
+      margin-bottom: 1.8rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #1c1c2b;
+      border-left: 4px solid #2667ff;
+      padding-left: 1rem;
+    }
+
+    /* 优势区 - 两列卡片 */
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .advantage-item {
+      background: #f8f9fb;
+      border-radius: 18px;
+      padding: 1.3rem 1.2rem;
+      border: 1px solid #e1e4e8;
+    }
+
+    .advantage-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      color: #12121e;
+    }
+
+    .advantage-item p {
+      font-size: 0.95rem;
+      color: #4b4b5a;
+    }
+
+    /* 说明区 */
+    .desc-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .desc-item {
+      background: #f7f8fb;
+      padding: 1.2rem 1.5rem;
+      border-radius: 18px;
+      border: 1px solid #dfe2e7;
+    }
+
+    .desc-item strong {
+      color: #12121f;
+    }
+
+    .desc-item .tag {
+      display: inline-block;
+      background: #e6ecf5;
+      color: #1a2a44;
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-left: 0.5rem;
+    }
+
+    /* FAQ 摘要 */
+    .faq-list {
+      list-style: none;
+    }
+
+    .faq-list li {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .faq-list li:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #1b1b2a;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      color: #4f4f62;
+      font-size: 0.95rem;
+    }
+
+    .faq-more {
+      margin-top: 0.8rem;
+      font-size: 0.95rem;
+      color: #2f3e5a;
+    }
+
+    /* 底部链接 */
+    .footer {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.5rem 2rem;
+      border: 1px solid #e3e6eb;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer p {
+      font-size: 0.95rem;
+      color: #3d3d50;
+      margin: 0.3rem 0;
+    }
+
+    .footer a {
+      color: #1a2a44;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #a0acbf;
+    }
+
+    .footer a:hover {
+      border-bottom: 1px solid #1a2a44;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .hero {
+        padding: 2.2rem 1.2rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .section {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .advantage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 区 -->
+  <div class="hero">
+    <h1>发现 · <span>爱游戏</span></h1>
+    <p>你打开这个页面，多半是想快速弄清楚这个网站到底是做什么的。简单来说——<br>帮你找到真心好玩的游戏，不用在茫茫商店里大海捞针。</p>
+    <a href="https://igame--home.com" aria-label="前往爱游戏">爱游戏</a>
+  </div>
+
+  <!-- 优势区 -->
+  <div class="section">
+    <h2 class="section-title">为什么值得留意</h2>
+    <div class="advantage-grid">
+      <div class="advantage-item">
+        <h3>🎮 筛选有尺度</h3>
+        <p>不看广告、不蹭热度，只凭实际体验和玩家口碑做推荐。</p>
+      </div>
+      <div class="advantage-item">
+        <h3>📋 品类覆盖广</h3>
+        <p>从独立小品到3A大作，从模拟经营到动作冒险，各有位置。</p>
+      </div>
+      <div class="advantage-item">
+        <h3>💬 真实玩家说</h3>
+        <p>每个推荐都附有来自社区的朴素评价，好与坏都写清楚。</p>
+      </div>
+      <div class="advantage-item">
+        <h3>🔍 快速定位</h3>
+        <p>不用翻几十页评测，一个页面就能看明白某款游戏适不适合你。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 说明区（场景化） -->
+  <div class="section">
+    <h2 class="section-title">适合哪些人</h2>
+    <div class="desc-grid">
+      <div class="desc-item">
+        <strong>平时玩游戏不多，但想试试</strong><span class="tag">入门友好</span>
+        <p>不知道从哪开始？这里整理出的游戏大多上手容易，也有难度提示，不会让你一上来就劝退。</p>
+      </div>
+      <div class="desc-item">
+        <strong>老玩家想换换口味</strong><span class="tag">避雷指南</span>
+        <p>总是玩同一种类型有点腻？<a href="https://igame--home.com" style="color:#2667ff;text-decoration:underline;">爱游戏</a> 里会定期补充冷门佳作，很多你未必听过，但玩进去就停不下来。</p>
+      </div>
+      <div class="desc-item">
+        <strong>送游戏礼物拿不准主意</strong><span class="tag">送礼参考</span>
+        <p>根据平台、时长、风格筛选，比自己去搜靠谱得多，至少不会送错。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="section">
+    <h2 class="section-title">常见疑问</h2>
+    <ul class="faq-list">
+      <li>
+        <span class="faq-q">❓ 这里的推荐多久更新一次？</span>
+        <span class="faq-a">没有固定频率，但每个月都会有新推荐，尤其是有明显折扣或新版本时会更。</span>
+      </li>
+      <li>
+        <span class="faq-q">❓ 推荐的都是正版游戏吗？</span>
+        <span class="faq-a">是的，所有推荐均指向官方商店或授权平台，不涉及任何灰色渠道。</span>
+      </li>
+      <li>
+        <span class="faq-q">❓ 会不会有付费推广？</span>
+        <span class="faq-a">目前没有任何商业合作或开发商赞助，你可以完全当成普通玩家的分享来看。</span>
+      </li>
+    </ul>
+    <div class="faq-more">
+      📖 更完整的 FAQ 和分类列表，在 <a href="https://igame--home.com" style="color:#1a2a44;text-decoration:underline;">爱游戏</a> 页面底部可以找到。
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer">
+    <p>© 2025 · <a href="https://igame--home.com">爱游戏</a>  —— 简单、真诚的游戏推荐站</p>
+    <p style="font-size:0.85rem; color:#6b6b7e;">页面内容仅供参考，所有游戏请自行判断是否适合自己</p>
+  </div>
+
+</div>
+</body>
+</html>
